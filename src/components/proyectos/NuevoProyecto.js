@@ -13,7 +13,10 @@ const NuevoProyecto = () => {
   // Lee los contenidos del INPUT
   const onChangeProyecto = (e) => {
     guardarProyecto({
+      // una copia
       ...proyecto,
+
+      // y le asingamos el nuevo valor
       [e.target.name]: e.target.value,
     });
   };

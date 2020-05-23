@@ -1,8 +1,14 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useContext, useState } from "react";
+import proyectoContext from "../context/proyectos/proyectoContext";
 
 const NuevoProyecto = () => {
-  // State Para Pryecto
+  // Obener el state del Formulario
+  const proyectosContext = useContext(proyectoContext);
 
+  // Extraer formulario de proyectoContext.Provider
+  const { formulario } = proyectosContext;
+
+  // State Para Pryecto
   const [proyecto, guardarProyecto] = useState({
     nombre: "",
   });
@@ -37,23 +43,24 @@ const NuevoProyecto = () => {
       <button type="button" className="btn btn-block btn-primario">
         Nuevo Proyecto
       </button>
+      {formulario ? (
+        <form className="formulario-nuevo-proyecto" onSubmit={onSubmitProyecto}>
+          <input
+            type="text"
+            className="input-text"
+            placeholder="Nombre Proyecto"
+            name="nombre"
+            value={nombre}
+            onChange={onChangeProyecto}
+          />
 
-      <form className="formulario-nuevo-proyecto" onSubmit={onSubmitProyecto}>
-        <input
-          type="text"
-          className="input-text"
-          placeholder="Nombre Proyecto"
-          name="nombre"
-          value={nombre}
-          onChange={onChangeProyecto}
-        />
-
-        <input
-          type="submit"
-          className="btn btn-primario btn-block"
-          value="Agregar Proyecto"
-        />
-      </form>
+          <input
+            type="submit"
+            className="btn btn-primario btn-block"
+            value="Agregar Proyecto"
+          />
+        </form>
+      ) : null}
     </Fragment>
   );
 };

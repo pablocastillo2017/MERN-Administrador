@@ -1,7 +1,11 @@
 import React, { useReducer } from "react";
 import proyectoContext from "./proyectoContext";
 import proyectoReducer from "./proyectoReducer";
-import { FORMULARIO_PROYECTO, OBTENER_PROYECTOS } from "../../../types";
+import {
+  FORMULARIO_PROYECTO,
+  OBTENER_PROYECTOS,
+  AGREGAR_PROYECTO,
+} from "../../../types";
 
 const ProyectoState = (props) => {
   const proyectos = [

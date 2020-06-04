@@ -15,7 +15,6 @@ const ProyectoState = (props) => {
     { id: 3, nombre: "Diseno de sitio Web" },
     { id: 4, nombre: "MERN" },
   ];
-
   const initialState = {
     proyectos: [],
     formulario: false,

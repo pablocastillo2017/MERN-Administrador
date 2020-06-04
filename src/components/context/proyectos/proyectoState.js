@@ -7,7 +7,7 @@ import {
   OBTENER_PROYECTOS,
   AGREGAR_PROYECTO,
 } from "../../../types";
-
+//
 const ProyectoState = (props) => {
   const proyectos = [
     { id: 1, nombre: "Tienda Virtual" },

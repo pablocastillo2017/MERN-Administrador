@@ -1,12 +1,9 @@
-<<<<<<< HEAD
 import {
   FORMULARIO_PROYECTO,
   OBTENER_PROYECTOS,
   AGREGAR_PROYECTO,
+  VALIDAR_FORMULARIO,
 } from "../../../types";
-=======
-import { FORMULARIO_PROYECTO, OBTENER_PROYECTOS } from "../../../types";
->>>>>>> b38359a144566b90fd39585e14d5ee188829df23
 
 // Lo que hace el REDUCER es cambiar el STATE
 export default (state, action) => {
@@ -23,14 +20,19 @@ export default (state, action) => {
         proyectos: action.payload,
       };
 
-<<<<<<< HEAD
     case AGREGAR_PROYECTO:
       return {
         ...state,
         proyectos: [...state.proyectos, action.payload],
+        errorformulario: false,
       };
-=======
->>>>>>> b38359a144566b90fd39585e14d5ee188829df23
+
+    case VALIDAR_FORMULARIO:
+      return {
+        ...state,
+        errorformulario: true,
+      };
+
     default:
       return state;
   }

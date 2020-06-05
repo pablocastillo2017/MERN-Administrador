@@ -3,6 +3,7 @@ import {
   OBTENER_PROYECTOS,
   AGREGAR_PROYECTO,
   VALIDAR_FORMULARIO,
+  PROYECTO_ACTUAL,
 } from "../../../types";
 
 // Lo que hace el REDUCER es cambiar el STATE
@@ -31,6 +32,14 @@ export default (state, action) => {
       return {
         ...state,
         errorformulario: true,
+      };
+
+    case PROYECTO_ACTUAL:
+      return {
+        ...state,
+        proyecto: state.proyectos.filter(
+          (proyecto) => proyecto.id === action.payload
+        ),
       };
 
     default:

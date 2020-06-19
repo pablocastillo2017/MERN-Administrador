@@ -4,6 +4,7 @@ import Login from "./components/auth/Login";
 import NuevaCuenta from "./components/auth/NuevaCuenta";
 import Proyectos from "./components/proyectos/Proyectos";
 import ProyectoState from "./components/context/proyectos/proyectoState";
+import TareaState from "./components/context/tareas/tareaState";
 
 // Switch: todo lo que se coloque dentro del Switch
 // van a ser cada una de la diferentes paginas
@@ -12,13 +13,15 @@ import ProyectoState from "./components/context/proyectos/proyectoState";
 function App() {
   return (
     <ProyectoState>
-      <Router>
-        <Switch>
-          <Route exact path="/" component={Login} />
-          <Route exact path="/nueva-cuenta" component={NuevaCuenta} />
-          <Route exact path="/proyectos" component={Proyectos} />
-        </Switch>
-      </Router>
+      <TareaState>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Login} />
+            <Route exact path="/nueva-cuenta" component={NuevaCuenta} />
+            <Route exact path="/proyectos" component={Proyectos} />
+          </Switch>
+        </Router>
+      </TareaState>
     </ProyectoState>
   );
 }

@@ -20,6 +20,7 @@ const TareaState = (props) => {
       { nombre: "Elegir Colores", estado: false, proyectoId: 4 },
       { nombre: "Elegir Pago", estado: true, proyectoId: 3 },
     ],
+    tareasproyecto: null,
   };
 
   // Crear Dispach y State
@@ -39,6 +40,7 @@ const TareaState = (props) => {
     <TareaContext.Provider
       value={{
         tareas: state.tareas,
+        tareasproyecto: state.tareasproyecto,
         obtenerTareas,
       }}
     >

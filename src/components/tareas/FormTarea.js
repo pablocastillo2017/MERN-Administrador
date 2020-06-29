@@ -12,9 +12,24 @@ const FormTarea = () => {
   // Array destructuring para estraer proyecto Actual
   const [proyectoActual] = proyecto;
 
+  const onSubmit = e =>{
+    e.preventDefault();
+
+    // VALIDAR
+
+    // PASAR LA VALIDACION
+
+    // AGREGAR LA NUEVA TAREA AL STATE DE TAREA
+
+    // REINICIAR EL FORM
+
+  }
+
   return (
     <div className="formulario">
-      <form>
+      <form
+        onSubmit={onSubmit}
+      >
         <div className="contenedor-input">
           <input
             type="text"

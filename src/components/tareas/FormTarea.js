@@ -17,6 +17,7 @@ const FormTarea = () => {
     validarTarea,
     obtenerTareas,
     actualizarTarea,
+    limpiarTarea,
   } = tareasContext;
 
   // Effect que detecta si hay una tarea seleccionada
@@ -69,6 +70,9 @@ const FormTarea = () => {
     } else {
       // Actualizar Tarea Existente
       actualizarTarea(tarea);
+
+      //Elimina Tarea Selecionada del State
+      limpiarTarea();
     }
 
     // Obtener y filtrar las tareas del proyecto actual

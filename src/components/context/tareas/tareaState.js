@@ -8,6 +8,7 @@ import {
   ELIMINAR_TAREA,
   ESTADO_TAREA,
   TAREA_ACTUAL,
+  ACTUALIZAR_TAREA,
 } from "../../../types";
 
 const TareaState = (props) => {
@@ -83,6 +84,15 @@ const TareaState = (props) => {
       payload: tarea,
     });
   };
+
+  //Edita Modifica una Tarea
+  const actualizarTarea = (tarea) => {
+    dispach({
+      type: ACTUALIZAR_TAREA,
+      payload: tarea,
+    });
+  };
+
   return (
     <TareaContext.Provider
       value={{
@@ -96,6 +106,7 @@ const TareaState = (props) => {
         eliminarTarea,
         cambiarEstadoTarea,
         guardarTareaActual,
+        actualizarTarea,
       }}
     >
       {props.children}
